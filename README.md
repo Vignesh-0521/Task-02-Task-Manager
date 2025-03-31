@@ -1,5 +1,9 @@
 # Task Manager
 This application is used to manage tasks efficiently.
+<h3 align="center">Task Manager</h3>
+<p align="center">
+  <a href="https://vignesh-0521.github.io/Task-02-Task-Manager/">View Application Demo</a>
+</p>
 
 <details>
   <summary>Table of Contents</summary>
