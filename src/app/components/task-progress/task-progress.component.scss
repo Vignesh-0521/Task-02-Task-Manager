@@ -1,0 +1,198 @@
+.task-progress-container {    //task progress container styling
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 2rem;
+  }
+  #complete{    //completed spinner styling
+    background-color: #d3f4d4;
+  }
+  #inprogress{    //in-progress spinner styling
+    background-color: #bee4f0;
+  }
+  #pending{   //pending spinner styling
+    background-color: #edd0d0;
+  }
+  .footer 
+   {
+    display: flex;
+    justify-content: flex-end;
+}
+  .progress-card {    //progress card, header,title, subtitle styling
+    padding: 3rem;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    border-radius: 16px;
+    background: linear-gradient(145deg, #ffffff, #fafafa);
+    border: 1px solid #e0e0e0;
+    overflow: hidden;
+  
+    mat-card-header {
+      justify-content: center;
+      text-align: center;
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 2px solid #e0e0e0;
+      background: linear-gradient(to bottom, rgba(63,81,181,0.05), transparent);
+  
+      mat-card-title {
+        font-size: 2.2rem;
+        font-weight: 600;
+        color: #3f51b5;
+        letter-spacing: 0.8px;
+        text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+      }
+  
+      mat-card-subtitle {
+        font-size: 1.15rem;
+        color: #757575;
+        margin-top: 0.5rem;
+        font-style: italic;
+      }
+    }
+  }
+  
+  .progress-spinners {    //spinner styling
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 3rem;
+    padding: 1rem;
+  }
+  
+  .spinner-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    padding: 1.5rem;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    }
+  
+    &::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.2), transparent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+  
+    &:hover::before {
+      opacity: 1;
+    }
+  }
+  
+  .spinner-label {    //spinner label, percentage,status, count styling
+    text-align: center;
+    margin-top: 1.2rem;
+  
+    .percentage {
+      display: block;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    }
+  
+    .status {
+      display: block;
+      font-size: 1.3rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+  
+    .count {
+      display: block;
+      font-size: 1.1rem;
+      margin-top: 0.4rem;
+      font-weight: 500;
+      opacity: 0.85;
+    }
+  }
+  
+  .total-tasks {
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    background: linear-gradient(145deg, #f5f7fa, #eceff1);
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+  
+    .label {
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: #616161;
+      margin-right: 0.8rem;
+    }
+  
+    .value {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #3f51b5;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    }
+  }
+  
+  // responsive design
+  @media (max-width: 768px) {
+    .progress-spinners {
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+  
+    .spinner-item {
+      width: 180px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .task-progress-container {
+      margin: 1rem;
+      padding: 1rem;
+    }
+  
+    .progress-card {
+      padding: 2rem;
+    }
+  
+    mat-card-title {
+      font-size: 1.8rem;
+    }
+  
+    .spinner-item {
+      width: 160px;
+      padding: 1rem;
+    }
+  
+    mat-progress-spinner {
+      &[diameter="120"] {
+        width: 100px !important;
+        height: 100px !important;
+        
+        ::ng-deep svg {
+          width: 100px !important;
+          height: 100px !important;
+        }
+        
+        &[strokeWidth="10"] {
+          ::ng-deep circle {
+            stroke-width: 8 !important;
+          }
+        }
+      }
+    }
+  }

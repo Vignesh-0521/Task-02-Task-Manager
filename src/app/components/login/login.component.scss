@@ -1,0 +1,79 @@
+.login-card {   //login card styling
+  max-width: 450px;
+  margin: 6rem auto;
+  padding: 2.5rem;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid #eee;
+
+  mat-card-header {   //login card header styling
+    justify-content: center;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #eee;
+  }
+
+  mat-card-title {    //login card title styling
+    font-size: 2rem;
+    color: #3f51b5;
+    font-weight: 500;
+  }
+}
+
+mat-form-field {    //login form fields and labels styling
+  width: 100%;
+  margin-bottom: 1.8rem;
+  
+  mat-label {
+    color: #666;
+  }
+  
+  input {
+    caret-color: #3f51b5;
+  }
+}
+
+button {    //button styling
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  
+  &:hover:not([disabled]) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  }
+  
+  &[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.error {    //error styling
+  color: #f44336;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 0.95rem;
+  background: #ffebee;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+.register-link {    //register link styling
+  text-align: center;
+  
+  a {
+    color: #3f51b5;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 1px solid #3f51b5;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background: rgba(63,81,181,0.1);
+    }
+  }
+}

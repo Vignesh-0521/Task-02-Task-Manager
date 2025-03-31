@@ -1,0 +1,54 @@
+<mat-card class="register-card">    <!-- registration card -->
+  <mat-card-header>   <!-- registration card header -->
+    <mat-card-title>Register</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>    <!-- registration card content -->
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="outline">   <!-- registration form fields, labeling and error handing -->
+        <mat-label>Username</mat-label>
+        <input matInput formControlName="username" required>
+        <mat-error *ngIf="username?.hasError('required') && username?.touched">
+          Username is required
+        </mat-error>
+        <mat-error *ngIf="username?.hasError('minlength') && username?.touched">
+          Username must be at least 5 characters
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="password" required>
+        <mat-error *ngIf="password?.hasError('required') && password?.touched">
+          Password is required
+        </mat-error>
+        <mat-error *ngIf="password?.hasError('minlength') && password?.touched">
+          Password must be at least 8 characters
+        </mat-error>
+        <mat-error *ngIf="password?.hasError('pattern') && password?.touched">
+          Password must contain letters, numbers, and symbols
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Confirm Password</mat-label>
+        <input matInput type="password" formControlName="confirmPassword" required>
+        <mat-error *ngIf="confirmPassword?.hasError('required') && confirmPassword?.touched">
+          Confirmation is required
+        </mat-error>
+        <mat-error *ngIf="registerForm.hasError('mismatch') && confirmPassword?.touched">
+          Passwords do not match
+        </mat-error>
+      </mat-form-field>
+
+      <div class="error" *ngIf="errorMessage">{{errorMessage}}</div>
+      <div class="success" *ngIf="successMessage">{{successMessage}}</div>
+
+      <div class="button-group">    <!-- register button -->
+        <button mat-raised-button color="primary" type="submit" [disabled]="!registerForm.valid || registerForm.pristine">
+          Register
+        </button>
+        <a mat-button [routerLink]="['/login']">Already have an account? Login</a>    <!-- if already have an account, takes to login -->
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

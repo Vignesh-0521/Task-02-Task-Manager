@@ -1,0 +1,95 @@
+.dashboard-card {   //card styling
+  max-width: 900px;
+  margin: 6rem auto 2rem;
+  padding: 2.5rem;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid #eee;
+
+  mat-card-header {   //card header styling
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid #eee;
+
+    mat-card-title {    //card title styling
+      font-size: 2.2rem;
+      color: #3f51b5;
+      font-weight: 500;
+    }
+
+    mat-card-subtitle {   //card subtitle styling
+      color: #666;
+      font-size: 1.1rem;
+    }
+  }
+}
+
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+#completed{   //completed card styling
+  background-color: rgb(173, 223, 191);
+}
+#inprogress{    //in-progress card styling
+  background-color: rgb(173, 199, 223);
+}
+#pending{   //pending tasks card styling
+  background-color: rgb(223, 173, 173);
+}
+#tasks{   //total tasks card styling
+  background-color: rgb(225, 213, 241);
+}
+
+.stat-card {
+  text-align: center;
+  padding: 2rem;
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid #eee;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  }
+
+  .stat-value {
+    font-size: 3rem;
+    font-weight: 600;
+    color: #3f51b5;
+    margin-bottom: 0.8rem;
+  }
+
+  .stat-label {
+    font-size: 1.2rem;
+    color: #666;
+    font-weight: 500;
+  }
+}
+
+.actions {    //buttons styling
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+
+  button {
+    min-width: 220px;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+  }
+}
+#white-icon svg {     //icon styling
+  fill: white;
+}

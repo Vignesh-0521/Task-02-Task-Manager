@@ -1,0 +1,55 @@
+<div class="task-list-container">
+  <div class="header">
+    <h2>Task List</h2>
+    <button mat-raised-button color="primary" (click)="addNewTask()">   <!-- button for adding tasks -->
+      <mat-icon>add</mat-icon> Add Task
+    </button>
+  </div>
+
+  <mat-table [dataSource]="tasks" class="mat-elevation-z8">   <!-- showing data in table format -->
+    <ng-container matColumnDef="title">
+      <mat-header-cell *matHeaderCellDef> Title </mat-header-cell>    <!-- header title -->
+      <mat-cell *matCellDef="let task"> {{task.title}} </mat-cell>    <!-- tasks rendering -->
+    </ng-container>
+
+    <ng-container matColumnDef="status">
+      <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>   <!-- header title -->
+      <mat-cell *matCellDef="let task"> 
+        <span [class]="task.status.toLowerCase()">{{task.status}}</span>    <!-- tasks rendering -->
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+      <mat-cell *matCellDef="let task"> 
+        <button mat-icon-button color="primary" (click)="viewTask(task.id)" title="View">   <!-- view button -->
+          <mat-icon>visibility</mat-icon>
+        </button>
+        <button mat-icon-button color="accent" (click)="editTask(task.id)" title="Edit">    <!-- edit button -->
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" (click)="deleteTask(task.id)" title="Delete">    <!-- delete button -->
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+
+  <div class="no-tasks" *ngIf="tasks.length === 0">
+    No tasks found. Click "Add Task" to create one!
+  </div>
+
+  <div class="footer">
+    <button mat-raised-button style="background-color: rgb(230, 139, 205); font-weight: 500;" (click)="goToDashboard()" id="backtodashboard">
+      <!-- button to back to dashboard with icons -->
+      <mat-icon>arrow_back</mat-icon> Back to Dashboard 
+    </button>
+    <button mat-raised-button style="background-color: rgb(134, 229, 183); font-weight: 500;" [routerLink]="['/task-progress']">
+      <!-- button to go to progress page -->
+      <mat-icon>arrow_back</mat-icon> Go to Task Progress
+    </button>
+  </div>
+</div>

@@ -1,0 +1,88 @@
+.register-card {    //registration card styling
+  max-width: 450px;
+  margin: 6rem auto;
+  padding: 2.5rem;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid #eee;
+
+  mat-card-header {   //registration card header styling
+    justify-content: center;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #eee;
+  }
+
+  mat-card-title {    //registration card title styling
+    font-size: 2rem;
+    color: #3f51b5;
+    font-weight: 500;
+  }
+}
+
+mat-form-field {    //registration form fields,labels and input styling
+  width: 100%;
+  margin-bottom: 1.8rem;
+  
+  mat-label {
+    color: #666;
+  }
+  
+  input {
+    caret-color: #3f51b5;
+  }
+}
+
+.error {    //error styling
+  color: #f44336;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 0.95rem;
+  background: #ffebee;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+.success {    //on success styling
+  color: #4caf50;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 0.95rem;
+  background: #e8f5e9;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+.button-group {   //buttons styling
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  
+  button, a {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    
+    &:hover:not([disabled]) {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    
+    &[disabled] {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  }
+  
+  a {   //links styling
+    color: #3f51b5;
+    text-decoration: none;
+    text-align: center;
+    border: 1px solid #3f51b5;
+    
+    &:hover {
+      background: rgba(63,81,181,0.1);
+    }
+  }
+}

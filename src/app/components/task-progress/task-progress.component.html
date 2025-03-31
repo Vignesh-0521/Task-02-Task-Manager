@@ -1,0 +1,68 @@
+<div class="task-progress-container">
+    <mat-card class="progress-card">    <!-- task-progress card -->
+      <mat-card-header>   <!-- task progress card header, title and subtitle-->
+        <mat-card-title>Task Progress Overview</mat-card-title>
+        <mat-card-subtitle>Monitor your task completion status</mat-card-subtitle>
+      </mat-card-header>
+  
+      <mat-card-content>    <!-- task progress card content -->
+        <div class="progress-spinners">
+          <div class="spinner-item" id="complete">    <!-- completed card with spinner material-->
+            <mat-progress-spinner
+              mode="determinate"
+              [value]="completedPercentage"
+              [diameter]="120"
+              [strokeWidth]="10"
+              class="completed-spinner">
+            </mat-progress-spinner>
+            <div class="spinner-label">
+                <span class="percentage">{{completedPercentage}}%</span>
+                <span class="status">Completed</span>
+                <span class="count">({{completedTasks}})</span>
+            </div>
+          </div>
+  
+          <div class="spinner-item" id="inprogress">    <!-- in-progress card with spinner material-->
+            <mat-progress-spinner
+              mode="determinate"
+              [value]="inProgressPercentage"
+              [diameter]="120"
+              [strokeWidth]="10"
+              class="in-progress-spinner">
+            </mat-progress-spinner>
+            <div class="spinner-label">
+              <span class="percentage">{{inProgressPercentage}}%</span>
+              <span class="status">In Progress</span>
+              <span class="count">({{inProgressTasks}})</span>
+            </div>
+          </div>
+  
+          <div class="spinner-item" id="pending">   <!-- pending card with spinner material-->
+            <mat-progress-spinner
+              mode="determinate"
+              [value]="pendingPercentage"
+              [diameter]="120"
+              [strokeWidth]="10"
+              class="pending-spinner">
+            </mat-progress-spinner>
+            <div class="spinner-label">
+              <span class="percentage">{{pendingPercentage}}%</span>
+              <span class="status">Pending</span>
+              <span class="count">({{pendingTasks}})</span>
+            </div>
+          </div>
+        </div>
+  
+        <div class="total-tasks">
+          <span class="label">Total Tasks:</span>
+          <span class="value">{{totalTasks}}</span>
+        </div>
+      </mat-card-content>
+      <div class="footer" >
+        <button mat-raised-button style="background-color: rgb(134, 229, 183); font-weight: 500;" [routerLink]="['/dashboard']">
+          <!-- button to go to dashboard-->
+          <mat-icon>arrow_back</mat-icon> Go to Dashboard
+        </button>
+      </div>
+    </mat-card>
+  </div>

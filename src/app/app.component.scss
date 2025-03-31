@@ -1,0 +1,91 @@
+.main-toolbar {   //styling for toolbar
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: linear-gradient(135deg, #4e00d4 0%, #1b7484 50%, #a36ad4 100%);
+  animation: gradientShift 5s ease infinite;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+  padding: 0 1.5rem;
+  height: 70px;
+}
+
+.menu-btn {   //styling for menu button
+  margin-right: 1.5rem;
+  color: #e8eaf6;
+  transition: all 0.3s ease;
+  &:hover {
+    background: rgba(255,255,255,0.15);
+    transform: scale(1.1);
+  }
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.user-actions {   
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.profile-btn {    //styling for profile button
+  color: #e8eaf6;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  font-weight: 550;
+  
+  mat-icon {    //styling icons
+    margin-right: 0.5rem;
+    vertical-align: middle;
+  }
+  
+  &:hover {
+    background: rgba(255,255,255,0.15);
+    transform: translateY(-2px);
+  }
+}
+
+.logout-btn {   //styling logout button
+  color: #e8eaf6;
+  transition: all 0.3s ease;
+  &:hover {
+    background: rgba(255,255,255,0.15);
+    transform: scale(1.1);
+  }
+}
+
+mat-menu {    //styling menu bar
+  background: #ffffff;
+  border-radius: 12px;           
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15); 
+  padding: 8px 0;               
+  min-width: 160px;            
+
+  button {
+    color: #333333;             /* Slightly darker for better contrast */
+    padding: 8px 16px;          /* Added padding for better click area */
+    width: 100%;                /* Full width for consistent alignment */
+    text-align: left;           /* Left-aligned text */
+    font-size: 14px;            /* Consistent font size */
+    transition: background 0.2s ease; /* Smooth hover transition */
+
+    &:hover {
+      background: #f8f8f8;      /* Lighter hover background */
+      color: #1976d2;           /* Added hover color change */
+    }
+
+    &:active {
+      background: #e0e0e0;      /* Added active state */
+    }
+  }
+
+  .mat-menu-item-divider {    //divider styling
+    margin: 4px 0;
+    border-top: 1px solid #eee;
+  }
+}

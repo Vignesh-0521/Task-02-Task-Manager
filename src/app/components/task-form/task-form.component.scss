@@ -1,0 +1,66 @@
+.task-form-container {    //task-form container styling
+  max-width: 700px;
+  margin: 6rem auto 2rem;
+  padding: 2rem;
+}
+
+.task-form-card {   //taskform card,header and title styling
+  padding: 2.5rem;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid #eee;
+
+  mat-card-header {
+    justify-content: center;
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid #eee;
+
+    mat-card-title {
+      font-size: 2.2rem;
+      color: #3f51b5;
+      font-weight: 500;
+    }
+  }
+}
+
+mat-form-field {    //form fields, label, input, textarea, select option styling
+  width: 100%;
+  margin-bottom: 1.8rem;
+  
+  mat-label {
+    color: #666;
+  }
+  
+  input, textarea, mat-select {
+    caret-color: #3f51b5;
+  }
+  
+  textarea {
+    min-height: 120px;
+  }
+}
+
+.form-actions {   //buttons styling
+  display: flex;
+  gap: 1.5rem;
+  justify-content: flex-start;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+  
+  button {
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    
+    &:hover:not([disabled]) {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    
+    &[disabled] {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  }
+}

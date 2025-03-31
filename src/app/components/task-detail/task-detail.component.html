@@ -1,0 +1,45 @@
+<div class="task-detail-container" *ngIf="task; else noTask">   
+    <mat-card class="task-card">    <!-- task-detail card -->
+      <mat-card-header>   <!-- details card header -->
+        <mat-card-title>{{task.title}}</mat-card-title>
+      </mat-card-header>
+      <mat-card-subtitle>Task Details</mat-card-subtitle>   <!-- details card subtitle -->
+      <mat-card-content>    <!-- details card content -->
+        <div class="task-info">
+          <div class="info-item">
+            <strong>Description:</strong>
+            <p>{{task.description || 'No description provided'}}</p>
+          </div>
+          <div class="info-item">
+            <strong>Status:</strong>
+            <span [class]="task.status.toLowerCase()">{{task.status}}</span>
+          </div>
+          <div class="info-item">
+            <strong>Due Date:</strong>
+            <span>{{formatDate(task.dueDate)}}</span>
+          </div>
+        </div>
+      </mat-card-content>
+  
+      <mat-card-actions>    <!-- details page buttons like edit, delete and back to list -->
+        <button mat-raised-button color="accent" (click)="editTask()">
+          <mat-icon>edit</mat-icon> Edit
+        </button>
+        <button mat-raised-button color="warn" (click)="deleteTask()">
+          <mat-icon>delete</mat-icon> Delete
+        </button>
+        <button mat-button (click)="goBack()">
+          <mat-icon>arrow_back</mat-icon> Back to List
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  
+  <ng-template #noTask>
+    <div class="no-task">   <!-- if no tasks found, on clicking goes back to tasks -->
+      <p>Task not found</p>
+      <button mat-raised-button color="primary" (click)="goBack()">
+        Back to Tasks
+      </button>
+    </div>
+  </ng-template>
